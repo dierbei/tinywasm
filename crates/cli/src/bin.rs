@@ -3,7 +3,7 @@ use std::str::FromStr;
 use argh::FromArgs;
 use args::WasmArg;
 use color_eyre::eyre::Result;
-use log::{debug, info};
+use log::info;
 use tinywasm::{types::WasmValue, Module};
 
 use crate::args::to_wasm_args;
@@ -68,7 +68,6 @@ struct Run {
 
 fn main() -> Result<()> {
     color_eyre::install()?;
-
     let args: TinyWasmCli = argh::from_env();
     let level = match args.log_level.as_str() {
         "trace" => log::LevelFilter::Trace,
@@ -82,10 +81,9 @@ fn main() -> Result<()> {
     pretty_env_logger::formatted_builder().filter_level(level).init();
 
     let cwd = std::env::current_dir()?;
-
     match args.nested {
         TinyWasmSubcommand::Run(Run { wasm_file, engine, args, func }) => {
-            debug!("args: {:?}", args);
+            info!("args: {:?}", args);
 
             let path = cwd.join(wasm_file.clone());
             let module = match wasm_file.ends_with(".wat") {
@@ -110,7 +108,7 @@ fn main() -> Result<()> {
 fn run(module: Module, func: Option<String>, args: Vec<WasmValue>) -> Result<()> {
     let mut store = tinywasm::Store::default();
     let instance = module.instantiate(&mut store, None)?;
-
+    info!("func: {:?}, args: {:?}", func, args);
     if let Some(func) = func {
         let func = instance.exported_func_untyped(&store, &func)?;
         let res = func.call(&mut store, &args)?;

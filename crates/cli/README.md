@@ -9,3 +9,9 @@ It is recommended to use the library directly instead of the CLI.
 $ cargo install tinywasm-cli
 $ tinywasm-cli --help
 ```
+
+## ubuntu install lib
+```shell
+apt install pkg-config
+apt-get install fontconfig libfontconfig1-dev
+```

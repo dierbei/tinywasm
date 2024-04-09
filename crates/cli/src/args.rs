@@ -1,4 +1,5 @@
 use std::str::FromStr;
+use log::info;
 use tinywasm::types::WasmValue;
 
 #[derive(Debug)]

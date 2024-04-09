@@ -1,0 +1,429 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'tinywasm-cli'",
+            "cargo": {
+                "args": [
+                    "run",
+                    "-p",
+                    "tinywasm-cli",
+                    "--",
+                    "run",
+                    "examples/wasm/add.wasm",
+                    "-f",
+                    "add",
+                    "-a",
+                    "i32:1",
+                    "-a",
+                    "i32:2"
+                ],
+                "filter": {
+                    "name": "tinywasm-cli",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'tinywasm-cli'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=tinywasm-cli",
+                    "--package=tinywasm-cli"
+                ],
+                "filter": {
+                    "name": "tinywasm-cli",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'tinywasm'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=tinywasm"
+                ],
+                "filter": {
+                    "name": "tinywasm",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'test-mvp'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=test-mvp",
+                    "--package=tinywasm"
+                ],
+                "filter": {
+                    "name": "test-mvp",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'test-two'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=test-two",
+                    "--package=tinywasm"
+                ],
+                "filter": {
+                    "name": "test-two",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'test-wast'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=test-wast",
+                    "--package=tinywasm"
+                ],
+                "filter": {
+                    "name": "test-wast",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'tinywasm-parser'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=tinywasm-parser"
+                ],
+                "filter": {
+                    "name": "tinywasm-parser",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'tinywasm-types'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=tinywasm-types"
+                ],
+                "filter": {
+                    "name": "tinywasm-types",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'wasm-testsuite'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=wasm-testsuite"
+                ],
+                "filter": {
+                    "name": "wasm-testsuite",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'selfhosted'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=selfhosted",
+                    "--package=benchmarks"
+                ],
+                "filter": {
+                    "name": "selfhosted",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'fibonacci'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=fibonacci",
+                    "--package=benchmarks"
+                ],
+                "filter": {
+                    "name": "fibonacci",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'argon2id'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=argon2id",
+                    "--package=benchmarks"
+                ],
+                "filter": {
+                    "name": "argon2id",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'generate-charts'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=generate-charts",
+                    "--package=scripts"
+                ],
+                "filter": {
+                    "name": "generate-charts",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'generate-charts'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=generate-charts",
+                    "--package=scripts"
+                ],
+                "filter": {
+                    "name": "generate-charts",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'wasm-rust'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=wasm-rust",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "wasm-rust",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'wasm-rust'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=wasm-rust",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "wasm-rust",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'simple'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=simple",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "simple",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'simple'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=simple",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "simple",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'linking'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=linking",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "linking",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'linking'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=linking",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "linking",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'archive'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=archive",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "archive",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'archive'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=archive",
+                    "--package=tinywasm-root"
+                ],
+                "filter": {
+                    "name": "archive",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
